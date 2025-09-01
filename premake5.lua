@@ -2,8 +2,8 @@ project "ImGui"
     kind "StaticLib"
     language "C++"
 
-    targetdir("bin/" .. outputdir .. "/%{prj.name}")
-    objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files {
         "imconfig.h",
@@ -18,10 +18,10 @@ project "ImGui"
         "imstb_demo.cpp"
     }
 
-    filter "system::windows"
-        systemversion "latest"
-        cppdialect "C++20"
-        staticruntime "On"
+    filter "system:windows"
+		cppdialect "C++20"
+		staticruntime "On"
+		systemversion "latest"
 
     filter { "system:windows", "configurations:Release" }
         buildoptions "/MT"
